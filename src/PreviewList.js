@@ -49,11 +49,7 @@ function PreviewList(props){
         <Grid container spacing={8}>
             {
                 fileObjects.map((fileObject, i) => {
-                    const img = (isImage(fileObject.file) ? 
-                    <img className={classes.smallPreviewImg} role="presentation" src={fileObject.data}/>
-                        : 
-                        <AttachFileIcon className={classes.smallPreviewImg} />
-                    );
+                    const img = <img className={classes.smallPreviewImg} role="presentation" src={fileObject.data}/>
                     return (
                         <Grid item xs={4} key={i} className={classes.imageContainer}>
                             {img}

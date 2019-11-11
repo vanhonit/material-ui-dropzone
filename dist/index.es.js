@@ -1209,13 +1209,6 @@ var possibleConstructorReturn = function (self, call) {
   return call && (typeof call === "object" || typeof call === "function") ? call : self;
 };
 
-function isImage(file) {
-  var fileName = file.name || file.path;
-  var suffix = fileName.substr(fileName.indexOf('.') + 1).toLowerCase();
-  if (suffix === 'jpg' || suffix === 'jpeg' || suffix === 'bmp' || suffix === 'png') {
-    return true;
-  }
-}
 function convertBytesToMbsOrKbs(filesize) {
   var size = '';
   // I know, not technically correct...
@@ -1564,7 +1557,7 @@ var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.d
 exports.default = _default;
 });
 
-var AttachFileIcon = unwrapExports(AttachFile);
+unwrapExports(AttachFile);
 
 var styles$2 = {
     removeBtn: {
@@ -1613,7 +1606,7 @@ function PreviewList(props) {
         Grid,
         { container: true, spacing: 8 },
         fileObjects.map(function (fileObject, i) {
-            var img = isImage(fileObject.file) ? React.createElement('img', { className: classes.smallPreviewImg, role: 'presentation', src: fileObject.data }) : React.createElement(AttachFileIcon, { className: classes.smallPreviewImg });
+            var img = React.createElement('img', { className: classes.smallPreviewImg, role: 'presentation', src: fileObject.data });
             return React.createElement(
                 Grid,
                 { item: true, xs: 4, key: i, className: classes.imageContainer },
